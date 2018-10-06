@@ -9,4 +9,8 @@ module.exports = function (server){
 // ROTAS DAS APIS
   const billingCycleService = require('../api/billingCycle/billingCycleService')
   billingCycleService.register(router,'/billingCycles');
+
+// ROTAS DAS APIS DE USUARIO
+ const userService = require('../api/user/userService');
+ userService.register(router, '/user');  
 };
