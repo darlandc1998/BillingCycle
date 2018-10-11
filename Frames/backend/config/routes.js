@@ -12,5 +12,9 @@ module.exports = function (server){
 
 // ROTAS DAS APIS DE USUARIO
  const userService = require('../api/user/userService');
- userService.register(router, '/user');  
+ userService.register(router, '/user');
+
+ const billingSummaryService  = require('../api/billingSummary/billingSummaryService');
+ router.route('/billingSummary').get(billingSummaryService.getSummary);
+
 };
