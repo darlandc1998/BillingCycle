@@ -3,8 +3,9 @@ const mongoose = restful.mongoose;
 
 
 const userSchema = new mongoose.Schema({
-  name:{type:String, required:true},
-  sexo:{type:String, required: true, uppercase:true, enum:['M','F']}
+  name:{ type:String, required:true },
+  email:{ type:String, require:true },
+  password:{ type:String, min:6, max:12, required:true }
 });
 
 module.exports = restful.model('User', userSchema);
